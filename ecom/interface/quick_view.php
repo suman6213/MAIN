@@ -87,5 +87,19 @@ if (isset($_SESSION['user_id'])) {
 <?php include '../include/footer.php'; ?>
 <!--custom js link-->
 <script src="../js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let mainImage = document.querySelector('.quick-view .box .row .image-container .main-image img');
+        let subImages = document.querySelectorAll('.quick-view .box .row .image-container .sub-image img');
+
+
+        subImages.forEach(image => {
+            image.addEventListener('click', () => {
+                let src = image.getAttribute('src');
+                mainImage.src = src;
+            });
+        });
+    });
+</script>
 </body>
 </html>
